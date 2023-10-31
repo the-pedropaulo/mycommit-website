@@ -23,3 +23,16 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
+
+Route.get('/installation', async ({ view }) => {
+  const state = {
+    user: { id: 1, username: 'virk' },
+  }
+  return view.render('installation', state)
+}).middleware(({ view }, next) => {
+  view.share({
+    foo: 'Pedro',
+  })
+
+  return next()
+})
