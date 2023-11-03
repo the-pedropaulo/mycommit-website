@@ -1,4 +1,6 @@
 {
   "assets/app.css": "http://localhost:8080/assets/app.css",
-  "assets/app.js": "http://localhost:8080/assets/app.js"
+  "assets/app.js": "http://localhost:8080/assets/app.js",
+  "assets/images/github.svg": "http://localhost:8080/assets/images/github.404ff619.svg",
+  "assets/images/linkedin.svg": "http://localhost:8080/assets/images/linkedin.c341cc1c.svg"
 }
