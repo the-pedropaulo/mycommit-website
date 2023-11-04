@@ -1,16 +1,81 @@
 @layout('layouts/main')
 @set('title', 'Installation')
-@set('text', 'The MYC will guide you through the commit creation process, allowing you to select the category, add a message and optionally add a more detailed description. With MYC, you can maintain a consistent pattern for your commit messages, improving collaboration and understanding of project development.')
+@set('text', 'To install MYC on your system, run the following command in your terminal:')
+@set('textTwo', 'This command will download and run the MYC installation script directly from the GitHub repository, configuring the tool in your environment.') 
+@set('alert', ' ATTENTION: Sometimes it will be necessary to restart the terminal so that the tool can be used.')
+@set('titleTwo', 'How to Use?')
+@set('textThird', 'After successful installation, you can easily use the MYC in your Git repository. Just navigate to the project directory and use the following command to commit:')
+@set('textFourth', 'The MYC will guide you through the commit creation process, allowing you to select the category, add a message and optionally add a more detailed description. With MYC, you can maintain a consistent pattern for your commit messages, improving collaboration and understanding of project development.')
+@set('titleThird', 'Uninstallation')
+@set('textFifth', 'To uninstall MYC on your system, run the following command in your terminal:')
 
 @section('body')
-  <section class="">
+  <section class="installation-section">
     <div class="flex flex-col gap-4">
-      <p class="title text-3xl font-bold">
+      <h1 class="title text-3xl font-bold">
         {{ title }}
-      </p>
+      </h1>
       <p class="subtitle">
         {{ text }}
       </p>
+
+      <pre class="relative">
+        <code>
+          <div class="line">
+            <span id="installation">curl -fsSL https://raw.githubusercontent.com/the-pedropaulo/mycommit/main/scripts/install.sh | sh</span>
+          </div>
+          @!component('components/copyButton', {
+            text: 'Copy',
+            type: 'button'
+          })
+        </code>
+      </pre>
+
+      <p>{{ textTwo }}</p>
+
+      <span>&#9889;{{ alert }}</span>
+
+      <h2 class="title text-lg font-semibold">{{ titleTwo }}</h2>
+      <p>{{ textThird}}</p>
+      <pre class="relative">
+        <code>
+          <div class="line">
+            <span id="installation">git add [archives]</span>
+          </div>
+          @!component('components/copyButton', {
+            text: 'Copy',
+            type: 'button'
+          })
+        </code>
+      </pre>
+      <p>And after...</p>
+      <pre class="relative">
+        <code>
+          <div class="line">
+            <span id="installation">myc</span>
+          </div>
+          @!component('components/copyButton', {
+            text: 'Copy',
+            type: 'button'
+          })
+        </code>
+      </pre>
+      
+      <p>{{ textFourth }}</p>
+
+      <h2 class="title text-lg font-semibold">&#9940;{{ titleThird }}</h2>
+      <p>{{ textFifth }}</p>
+      <pre class="relative">
+        <code>
+          <div class="line">
+            <span id="installation">curl -fsSL https://raw.githubusercontent.com/the-pedropaulo/mycommit/main/scripts/uninstall.sh | sh</span>
+          </div>
+          @!component('components/copyButton', {
+            text: 'Copy',
+            type: 'button'
+          })
+        </code>
+      </pre>
     </div>
   </section>
 @end

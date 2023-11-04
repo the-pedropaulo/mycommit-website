@@ -16,6 +16,7 @@
       .layout { 
         height: calc(100vh - 120px); 
         display: flex; 
+        box-shadow: inset 0px 0px 21px black;
       }
       .sidebar { 
         height: 100%; 
@@ -27,7 +28,7 @@
         background: #f9f9f9;
         flex: 1;
         background: white;
-        border-radius: 40px;
+        border-radius: 10px;
         padding-inline: 40px;
         height: 90%;
         box-shadow: 0px 2px 20px #888888;
@@ -40,7 +41,7 @@
 
     <section class="layout">
       @include('partials/sidebar')
-      <main class="py-12 px-8">
+      <main class="py-12 px-8 overflow-y-auto">
         @!section('body')
       </main>
     </section>
