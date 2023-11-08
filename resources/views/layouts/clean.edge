@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    @entryPointScripts('home')
+    @entryPointStyles('home')
+    <style>
+      * { margin: 0; padding: 0; }
+      .header { 
+        height: 60px; 
+        background: #5a45ff; 
+      }
+      .layout { 
+        height: 100%; 
+        display: flex; 
+        box-shadow: inset 0px 0px 21px black;
+      }
+      main { 
+        height: 100%; 
+        flex: 1;
+        padding-inline: 40px;
+        height: 100%;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .footer { height: 60px; background: #5a45ff; color: white; }
+    </style>
+  </head>
+  <body>
+    @include('partials/header')
+
+    <section class="layout">
+      <main class="py-28 px-8">
+        @!section('body')
+      </main>
+    </section>
+
+    @include('partials/footer')
+  </body>
+</html>
